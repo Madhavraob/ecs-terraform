@@ -77,7 +77,7 @@ resource "aws_security_group" "ec2-sg" {
 
 resource "aws_launch_configuration" "launch_conf" {
   name          = "web_config"
-  image_id      = "ami-0fac5486e4cff37f4"
+  image_id      = "ami-08b26b905b0d17561"
   #ami-0c09d65d2051ada93
   instance_type = "t2.micro"
   security_groups = ["${aws_security_group.ec2-sg.id}"]
@@ -120,7 +120,7 @@ resource "aws_ecs_task_definition" "tesk-def" {
 [
   {
     "name": "container-def",
-    "image": "369888207781.dkr.ecr.us-east-1.amazonaws.com/madhavecr:latest",
+    "image": "madhavraob/nodebackend",
     "cpu": 400,
     "memory": 400,
     "essential": true,
